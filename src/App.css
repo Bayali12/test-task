@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+h1 {
+	padding-left: 45px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.currency,
+.titleCurrency,
+.previousRate {
+	display: flex;
+}
+.currentDate {
+	width: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.currency > p {
+	padding-right: 90px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul > li {
+	display: flex;
+	list-style-type: none;
+	margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.currencies li:not(:first-child) .currency:hover {
+	cursor: pointer;
+	background-color: rgb(223, 223, 223);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.letterCode {
+	width: 100px;
+}
+.currencyValue {
+	width: 155px;
+}
+
+.tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -60px;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.currencyLi .letterCode {
+	position: relative;
+	display: inline-block;
+}
+
+.letterCode:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
 }
